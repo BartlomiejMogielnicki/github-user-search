@@ -22,6 +22,7 @@ const searchUser = () => {
       })
   } else {
     // Clear profile
+    ui.clearProfile();
   }
 };
 
