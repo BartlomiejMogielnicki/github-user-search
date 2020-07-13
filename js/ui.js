@@ -26,13 +26,35 @@ class UI {
       </div>
       <div class="repos-container">
         <h3>Latest Repos</h3>
-        <div id="repos"></div>
+        <div class="repos" id="repos"></div>
       </div>
   `;
   }
 
-  showAlert(message, className) {
+  // Show user repos
+  showRepos(repos) {
+    let output = '';
 
+    repos.forEach(repo => {
+      output += `
+      <div class="repo-container">
+        <div class="repo-info">
+          <a class="repo-link" href="${repo.html_url}" target="_blank">${repo.name}</a>
+        </div>
+        <div class="repo-stats">
+          <span>Stars: ${repo.stargazers_count}</span>
+          <span>Watchers: ${repo.watchers_count}</span>
+          <span>Forks: ${repo.forks_count}</span>
+        </div>
+      </div>
+      `;
+    })
+
+    // Insert to DOM
+    document.getElementById('repos').innerHTML = output;
+  }
+
+  showAlert(message, className) {
     // Clear alerts before insert new one
     this.clearAlert();
     // Create div

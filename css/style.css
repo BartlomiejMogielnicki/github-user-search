@@ -7,7 +7,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: grid;
     grid-template-rows: 50px 1fr 50px;
@@ -121,7 +121,8 @@ a {
     justify-content: space-between;
 }
 
-.user-stats span {
+.user-stats span,
+.repo-stats span {
     padding: 5px;
     background-color: #A6785D;
     border-radius: 5px;
@@ -142,7 +143,8 @@ li {
 }
 
 .repos-container {
-    margin-top: 20px;
+    margin: 20px 0;
+    text-align: center;
 }
 
 .alert {
@@ -155,4 +157,32 @@ li {
 .alert.error {
     background-color: red;
     color: white;
+}
+
+.repos-container h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.repos {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 5px;
+}
+
+.repo-container {
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 5px;
+}
+
+.repo-link {
+    margin: 5px 0;
+    font-weight: bold;
+    color: black;
+}
+
+.repo-stats {
+    margin: 10px 0;
 }
