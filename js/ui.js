@@ -3,6 +3,7 @@ class UI {
     this.profile = document.getElementById('profile');
   }
 
+  // Show profile
   showProfile(user) {
     this.profile.innerHTML = `
       <div class="user-container">
@@ -30,6 +31,38 @@ class UI {
   `;
   }
 
+  showAlert(message, className) {
+
+    // Clear alerts before insert new one
+    this.clearAlert();
+    // Create div
+    const div = document.createElement('div');
+    // Add class
+    div.className = className;
+    // Add text
+    div.appendChild(document.createTextNode(message))
+
+    // Insert element to DOM
+    const container = document.querySelector('.container');
+    const search = document.querySelector('.search-container')
+    container.insertBefore(div, search);
+
+    // Clear alert after 3 seconds
+    setTimeout(() => {
+      this.clearAlert();
+    }, 3000);
+  }
+
+  // Clear alert message
+  clearAlert() {
+    const currentAlert = document.querySelector('.alert');
+
+    if (currentAlert) {
+      currentAlert.remove();
+    }
+  }
+
+  // Clear profile
   clearProfile() {
     this.profile.innerHTML = '';
   }

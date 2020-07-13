@@ -13,8 +13,8 @@ const searchUser = () => {
     github.getUser(searchValue)
       .then(data => {
         if (data.profile.message === 'Not Found') {
-          // Show allert
-
+          // Show alert
+          ui.showAlert('User not found', 'alert error');
         } else {
           // Show profile
           ui.showProfile(data.profile);
